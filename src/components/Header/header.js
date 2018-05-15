@@ -8,7 +8,7 @@ const Header = ({ instruction, score, topscore }) => {
 
 
             <nav className="navbar ">
-                <a className="navbar-brand" href="/">Watch Memory Game</a>
+                <a className="navbar-brand" href="/Clicky-Game">Watch Memory Game</a>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
