@@ -1,10 +1,11 @@
 import React from "react";
+
 import "./GameCard.css"
 
 class GameCard extends React.Component {
     click = event => {
         this.props.handleIncrementScore(this.props.id);
-        this.props.shuffleWatches()
+        // this.props.shuffleWatches()
     };
 
     render() {
