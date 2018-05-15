@@ -72,17 +72,18 @@ class App extends React.Component {
       <div>
         <Header score={this.state.score} topscore={this.state.topscore} instruction={this.state.instruction} />
         <div className="container">
-
-        {this.state.cards.map(card => {
-          return <GameCard
-            key={card.id}
-            id={card.id}
-            name={card.name}
-            image={card.image}
-            handleIncrementScore={this.handleIncrementScore}
-            shuffleWatches={this.shuffleWatches}
-          />;
-        })}
+          <div className="row">
+            {this.state.cards.map(card => {
+              return <GameCard
+                key={card.id}
+                id={card.id}
+                name={card.name}
+                image={card.image}
+                handleIncrementScore={this.handleIncrementScore}
+                shuffleWatches={this.shuffleWatches}
+              />;
+            })}
+          </div>
         </div>
       </div>
 

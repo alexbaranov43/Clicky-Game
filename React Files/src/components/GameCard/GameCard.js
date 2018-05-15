@@ -11,13 +11,13 @@ class GameCard extends React.Component {
     render() {
 
         return (
-            <div className="row">
-                <div className="card col-md-3">
-                    <div className="img-container" onClick={this.click}>
-                        <img alt={this.props.name} src={this.props.image} />
-                    </div>
+
+            <div className="card col-md-3 col-xs-3 col-sm-3">
+                <div className="img-container" onClick={this.click}>
+                    <img alt={this.props.name} src={this.props.image} />
                 </div>
             </div>
+
         )
     }
 };
