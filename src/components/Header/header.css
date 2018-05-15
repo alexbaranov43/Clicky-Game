@@ -1,10 +1,11 @@
 .navbar {
-    background: #fa8231
+    background: #e55039
 }
 
 .navbar-brand{
     font-size: 20px;
     font-family: 'Lobster', cursive;
+    color: black
 }
 
 .nav-item{
@@ -18,4 +19,8 @@ h1{
 
 p {
     font-family: 'Abril Fatface', cursive;
+}
+
+.Directions {
+    text-align: center;
 }

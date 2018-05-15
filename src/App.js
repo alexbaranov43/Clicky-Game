@@ -21,7 +21,7 @@ class App extends React.Component {
     const guessedWatch = this.state.selectedWatch
     if (guessedWatch.includes(id)) {
       let instruction = this.state.instruction
-      instruction = "Invalid Guess. You Lose "
+      instruction = "You Already Have That One In Your Collection. Start Over"
       const score = 0
       const topscore = this.state.topscore
       this.setState({
@@ -30,7 +30,7 @@ class App extends React.Component {
     }
     else {
       let instruction = this.state.instruction
-      instruction = "Valid Selection. Select Another Watch "
+      instruction = "Exquisite Choice. Select Another Watch "
       let score = this.state.score
       score += 1;
       let topscore = this.state.topscore;
