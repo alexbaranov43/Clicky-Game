@@ -1,13 +1,12 @@
 import React from 'react';
 import GameCard from "./components/GameCard"
-import Wrapper from "./components/Wrapper"
 import Header from "./components/Header"
 import cards from "./cards.json"
 import './App.css';
 
 class App extends React.Component {
   state = {
-    cards: cards,
+    cards,
     score: 0,
     topscore: 0,
     instruction: '',
@@ -26,7 +25,7 @@ class App extends React.Component {
       const score = 0
       const topscore = this.state.topscore
       this.setState({
-        instruction, score, topscore, guessedWatch: []
+        instruction, score, topscore, selectedWatch: []
       })
     }
     else {
@@ -52,26 +51,40 @@ class App extends React.Component {
   }
 
   shuffleWatches = () => {
+    let currentWatches = cards.length,
+      temporaryValue,
+      randomIndex;
 
-  }
+    while (0 !== currentWatches) {
+      randomIndex = Math.floor(Math.random() * currentWatches);
+      currentWatches -= 1;
+
+      temporaryValue = cards[currentWatches];
+      cards[currentWatches] = cards[randomIndex];
+      cards[randomIndex] = temporaryValue;
+    }
+
+    this.setState({ cards });
+  };
   render() {
     return (
 
-      <Wrapper>
+      <div>
         <Header score={this.state.score} topscore={this.state.topscore} instruction={this.state.instruction} />
-        <div>
+        <div className="container">
 
-          {this.state.cards.map(card => {
-            return <GameCard
-              key={card.id}
-              id={card.id}
-              name={card.name}
-              image={card.image}
-              handleIncrementScore={this.handleIncrementScore}
-            />;
-          })}
+        {this.state.cards.map(card => {
+          return <GameCard
+            key={card.id}
+            id={card.id}
+            name={card.name}
+            image={card.image}
+            handleIncrementScore={this.handleIncrementScore}
+            shuffleWatches={this.shuffleWatches}
+          />;
+        })}
         </div>
-      </Wrapper>
+      </div>
 
     );
   }

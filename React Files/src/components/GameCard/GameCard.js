@@ -5,15 +5,17 @@ import "./GameCard.css"
 class GameCard extends React.Component {
     click = event => {
         this.props.handleIncrementScore(this.props.id);
-        // this.props.shuffleWatches()
+        this.props.shuffleWatches()
     };
 
     render() {
 
         return (
-            <div className="card col-md-3">
-                <div className="img-container" onClick={this.click}>
-                    <img alt={this.props.name} src={this.props.image} />
+            <div className="row">
+                <div className="card col-md-3">
+                    <div className="img-container" onClick={this.click}>
+                        <img alt={this.props.name} src={this.props.image} />
+                    </div>
                 </div>
             </div>
         )
