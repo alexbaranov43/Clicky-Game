@@ -45,10 +45,17 @@ class App extends React.Component {
         instruction,
         selectedWatch: [...this.state.selectedWatch, id]
       });
-
     }
-
   }
+
+  // youWin = score => {
+  //   let score = this.state.score;
+  //   if (score === 12) {
+  //     let instruction = this.state.instruction;
+  //     instruction = "You Have Collected An Impressive Collection. Play Again"
+  //     this.setState({ score: 0, topscore, instruction, selectedWatch: [] })
+  //   }
+  // }
 
   shuffleWatches = () => {
     let currentWatches = cards.length,
@@ -72,7 +79,7 @@ class App extends React.Component {
       <div>
         <Header score={this.state.score} topscore={this.state.topscore} instruction={this.state.instruction} />
         <div className="container">
-          <div className="row">
+          <div className="row imgbox">
             {this.state.cards.map(card => {
               return <GameCard
                 key={card.id}

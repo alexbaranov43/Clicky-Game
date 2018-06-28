@@ -1,5 +1,7 @@
 .navbar {
-    background: #e55039
+    background: #e55039;
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .navbar-brand{
